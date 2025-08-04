@@ -1,0 +1,49 @@
+name: multinova
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.3
+  webview_flutter: ^4.8.0
+  shelf: ^1.4.1
+  shelf_static: ^1.1.1
+  webview_windows: ^0.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/multihidro/multihidro/
+    - assets/multihidro/multihidro/files/
+    - assets/multihidro/
+    - assets/multipiso/multipiso/
+    - assets/multipiso/multipiso/files/
+    - assets/multipiso/
+    - assets/pisoseguro/pisoseguro/
+    - assets/pisoseguro/pisoseguro/files/
+    - assets/pisoseguro/
+    - assets/multimpact/
+    - assets/multiterm/
+    - assets/logo.png
+
+flutter_launcher_icons:
+  image_path: "assets/icon.png"
+  ios: true
+  android: true
+  windows:
+    generate: true
+    image_path: "assets/icon.png"
+    icon_size: 48
+
+windows:
+  generate_localization: true

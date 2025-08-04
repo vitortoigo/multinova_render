@@ -1,0 +1,27 @@
+
+workflows:
+  ios-offline-build:
+    name: iOS Offline Build
+    instance_type: mac_mini_m2
+    environment:
+      flutter: stable
+      xcode: latest
+    cache:
+      cache_paths:
+        - ~/.pub-cache
+
+    scripts:
+      - name: Flutter pub get
+        script: flutter pub get
+
+      - name: Baixar assets pesados pra dentro de /assets
+        script: |
+          curl -L -o assets.zip "https://github.com/vitortoigo/multinova_render/releases/download/v1.0-assets/assets.zip"
+          unzip -o assets.zip -d assets
+          rm assets.zip
+
+      - name: Build iOS
+        script: flutter build ipa --release --no-codesign
+
+    artifacts:
+      - build/ios/ipa/*.ipa
